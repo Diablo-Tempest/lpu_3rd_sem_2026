@@ -61,6 +61,7 @@ The constructor:
 4. can be overloaded
 */
 
+
 // class Student{
 //     private:
 //     int age;
@@ -71,18 +72,18 @@ The constructor:
 //             cout << "Constructor is called";
 //         }
 //         void setAge(int a){
-//             //setter function
-//             age = a;
-//         }
+    //             //setter function
+    //             age = a;
+    //         }
 //         int getAge(){
-//             //getter function
-//             return age;
-//         }
+    //             //getter function
+    //             return age;
+    //         }
 // };
 
 // class Student{
-//     private:
-//         string name;
+    //     private:
+    //         string name;
 //         int age;
 
 //     public:
@@ -97,7 +98,7 @@ The constructor:
 //         }
 //     // paramerterized constructor
 //         Student(string n, int a){
-//             name = n;
+    //             name = n;
 //             age = a;
 //         }
 //         void display(){
@@ -111,8 +112,8 @@ Every non-static member function has access to a special pointer called 'this'
 */
 
 // class Student{
-//     private:
-//         string name;
+    //     private:
+    //         string name;
 //     public:
 //         Student(string name){
 //             // string name = parameter
@@ -122,23 +123,26 @@ Every non-static member function has access to a special pointer called 'this'
 //         }
 // };
 
-class Student
-{
-private:
-    string name;
-    int age;
 
-public:
-    // Student(string n, int a){
-    //     name = n;
-    //     age = a;
-    // }
-    // Contructor initialization list
-    Student(string n, int a) : name(n), age(a)
-    {
-        cout << "Name: " << name << "\tAge: " << age << endl;
-    }
-};
+
+
+// class Student
+// {
+// private:
+//     string name;
+//     int age;
+
+// public:
+//     // Student(string n, int a){
+//     //     name = n;
+//     //     age = a;
+//     // }
+//     // Contructor initialization list
+//     Student(string n, int a) : name(n), age(a)
+//     {
+//         cout << "Name: " << name << "\tAge: " << age << endl;
+//     }
+// };
 
 int main()
 {
@@ -164,7 +168,7 @@ int main()
     // cout << s1.age; // this will not be accessible because age is private
     // Student s1("Biprosom", 28);
     // s1.display();
-    Student s1("Biprosom", 28);
+    // Student s1("Biprosom", 28);
 
     return 0;
 }
