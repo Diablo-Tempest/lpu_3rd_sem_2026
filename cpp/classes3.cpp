@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 /*
@@ -31,20 +31,20 @@ using namespace std;
         int x = add(5, 6);
     }
     the a + b, is the actual work. The operations required to enter add() and comeback to main() are the function call overhead.
-    
+
     Non-inline Member functions
     It is a normal function that isn't treated as inline.
-    
+
 */
 
-//inline member function
-// class Student{
-//     public:
-//         int age;
-//         void showAge(){
-//             cout << age;
-//         }
-    
+// inline member function
+//  class Student{
+//      public:
+//          int age;
+//          void showAge(){
+//              cout << age;
+//          }
+
 // };
 
 // non-inline member function
@@ -105,9 +105,10 @@ using namespace std;
 // };
 // int Student::count = 0;
 
-int main(){
+int main()
+{
 
-    // static data member 
+    // static data member
     // Student s1;
     // Student s2;
     // Student s3;
