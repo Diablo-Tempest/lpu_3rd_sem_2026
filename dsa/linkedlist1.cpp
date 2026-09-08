@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib> // exit(0) - normal/successfull termination, exit(1) - Termination with an error/falure status
 using namespace std;
 
 // method 1
@@ -51,6 +52,76 @@ void insertAtTheEnd(Node *&head, int value)
         temp = temp->next;
     temp->next = newNode;
 }
+void insertAfter(Node *&head, int value, int target)
+{
+    Node *newNode = new Node;
+    newNode->data = value;
+    newNode->next = nullptr;
+    Node *temp = head;
+    while (temp->data != target)
+    {
+        temp = temp->next;
+    }
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+void insertBefore(Node *&head, int value, int target)
+{
+    Node *newNode = new Node;
+    newNode->data = value;
+    newNode->next = nullptr;
+    Node *temp = head;
+    while (temp->next->data != target)
+        temp = temp->next;
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+
+void deleteAtTheBeginning(Node *&head)
+{
+    Node *temp = new Node;
+    temp = head;
+    head = head->next;
+    delete temp;
+}
+void deleteAtTheEnd(Node *&head)
+{
+    Node *temp = head;
+    Node *prev = nullptr;
+
+    while (temp->next != nullptr)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+    prev->next = nullptr;
+    delete temp;
+}
+void deleteInBetween(Node *&head, int target)
+{
+    Node *temp = head;
+    Node *prev = nullptr;
+    while (temp->data != target)
+    {
+        prev = head;
+        temp = temp->next;
+    }
+    prev->next = temp->next;
+    delete temp;
+}
+void search(Node *&head, int target){
+    Node* temp = head;
+    int position = 0;
+    while(temp != nullptr){
+        if(temp->data == target){
+            cout << target << " found at position " << position << endl;
+            return;
+        }
+            temp = temp->next;
+            position++;
+    }
+        cout << target << " Doesn't exist in the list." << endl;
+}
 int main()
 {
     // new keyword allocates memory dynamically
@@ -76,6 +147,17 @@ int main()
     traversal(head);
     insertAtTheEnd(head, 60);
     traversal(head);
+    insertAfter(head, 50, 30);
+    traversal(head);
+    insertBefore(head, 60, 30);
+    traversal(head);
+    deleteAtTheBeginning(head);
+    traversal(head);
+    deleteAtTheEnd(head);
+    traversal(head);
+    deleteInBetween(head, 20);
+    traversal(head);
+    search(head, 80);
 
     /*insertion
     Insertion means adding a new node
