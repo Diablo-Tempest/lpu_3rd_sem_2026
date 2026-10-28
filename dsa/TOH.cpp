@@ -1,27 +1,30 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-void towerOfHanoi(int n, char source, char destination, char auxilary){
+void towerOfHanoi(int n, char source, char destination, char auxiliary)
+{
     // base case
-    if(n == 1){
-        cout << "Move Disk 1 from " << source << " to " << destination << endl;
+    if (n == 1)
+    {
+        cout << "Move Disc 1 from " << source << " to " << destination << endl;
         return;
     }
+    // Step 1: Move n-1 discs to auxilary peg
+    towerOfHanoi(n - 1, source, auxiliary, destination);
 
-    // step 1: move n-1 disks to auxilary rod
-    towerOfHanoi(n-1, source, auxilary, destination);
+    // step 2: Move the largest disc to destination
+    cout << "Move Disc " << n << " from " << source << " to " << destination << endl;
 
-    // step 2: Move the largest disk to the destination
-    cout << "Move Disk " << n << " from " << source << " to " << destination << endl;
-    
-    // step 3: Move n-1 disk to destination rod
-    towerOfHanoi(n-1, auxilary, destination, source);
+    // step 3: Move n-1 discs to destination peg
+    towerOfHanoi(n - 1, auxiliary, destination, source);
 }
-int main(){
+int main()
+{
     int n;
-    cout << "Enter no.of disks: ";
+    cout << "Enter No. of discs: ";
     cin >> n;
-    if(n <= 0){
-        cout << "Invalid no of disks" << endl;
+    if (n <= 0)
+    {
+        cout << "Invalid no of discs!" << endl;
         return 0;
     }
     towerOfHanoi(n, 'A', 'C', 'B');
